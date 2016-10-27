@@ -1,0 +1,19 @@
+5 5
+
+q0 m
+q1 m
+q2 m
+q3 m
+q4 m
+
+a c o
+b c u
+c u o
+d u u
+f c o
+
+a q2 b q4
+
+a q4 c q0
+d q0 f q1 a q2
+a q2 b q4 c q1

@@ -1,0 +1,171 @@
+FSM: 
+7 3
+
+(0,0,0) m
+(1,1,1) m
+(2,2,dead) m
+(2,3,dead) m
+(3,3,dead) m
+(4,dead,dead) m
+(3,dead,dead) m
+
+0 c o
+1 c u
+2 c o
+
+2 (2,2,dead) 1 (1,1,1) 0 (0,0,0)
+
+2 (4,dead,dead) 1 (3,3,dead) 0 (2,3,dead)
+2 (4,dead,dead) 1 (3,dead,dead) 0 (2,2,dead)
+
+
+
+REQ_FSM: 
+2 3
+
+(0,0,0) m
+(1,1,1) m
+
+0 c o
+1 c u
+2 c o
+
+0 (0,0,0) 1 (1,1,1)
+
+*******************************************************************
+*********************All Inclusive Controller**********************
+*******************************************************************
+Y-States:
+	Information State: {(0,0,0)}
+	Transitions to:
+		Z-State with Information State {{(0,0,0)},{0,2}} via Control Decision {0,2}
+		Z-State with Information State {{(0,0,0)},{2}} via Control Decision {2}
+		Z-State with Information State {{(0,0,0),(1,1,1)},{0,1,2}} via Control Decision {0,1,2}
+		Z-State with Information State {{(0,0,0),(1,1,1)},{0,1}} via Control Decision {0,1}
+		Z-State with Information State {{(0,0,0),(1,1,1)},{1}} via Control Decision {1}
+		Z-State with Information State {{(0,0,0)},{0}} via Control Decision {0}
+		Z-State with Information State {{(0,0,0),(1,1,1)},{1,2}} via Control Decision {1,2}
+		Z-State with Information State {{(0,0,0)},{}} via Control Decision {}
+	Information State: {(2,2,dead)}
+	Transitions to:
+		Z-State with Information State {{(2,2,dead),(3,3,dead)},{0,1}} via Control Decision {0,1}
+		Z-State with Information State {{(2,2,dead),(3,3,dead)},{1}} via Control Decision {1}
+		Z-State with Information State {{(2,2,dead)},{0}} via Control Decision {0}
+		Z-State with Information State {{(2,2,dead)},{}} via Control Decision {}
+	Information State: {(2,3,dead)}
+	Transitions to:
+		Z-State with Information State {{(2,3,dead)},{0}} via Control Decision {0}
+		Z-State with Information State {{(2,3,dead)},{}} via Control Decision {}
+Z-States:
+	Information State: {{(0,0,0)},{}}
+	Information State: {{(0,0,0)},{0}}
+	Transitions to:
+		Y-State with Information State {(0,0,0)} via Event 0
+	Information State: {{(0,0,0),(1,1,1)},{1}}
+	Information State: {{(0,0,0),(1,1,1)},{0,1}}
+	Transitions to:
+		Y-State with Information State {(0,0,0)} via Event 0
+	Information State: {{(0,0,0)},{2}}
+	Transitions to:
+		Y-State with Information State {(2,2,dead)} via Event 2
+	Information State: {{(2,2,dead)},{}}
+	Information State: {{(2,2,dead)},{0}}
+	Transitions to:
+		Y-State with Information State {(2,3,dead)} via Event 0
+	Information State: {{(2,3,dead)},{}}
+	Information State: {{(2,3,dead)},{0}}
+	Transitions to:
+		Y-State with Information State {(2,2,dead)} via Event 0
+	Information State: {{(2,2,dead),(3,3,dead)},{1}}
+	Information State: {{(2,2,dead),(3,3,dead)},{0,1}}
+	Transitions to:
+		Y-State with Information State {(2,3,dead)} via Event 0
+	Information State: {{(0,0,0)},{0,2}}
+	Transitions to:
+		Y-State with Information State {(2,2,dead)} via Event 2
+		Y-State with Information State {(0,0,0)} via Event 0
+	Information State: {{(0,0,0),(1,1,1)},{1,2}}
+	Transitions to:
+		Y-State with Information State {(2,2,dead)} via Event 2
+	Information State: {{(0,0,0),(1,1,1)},{0,1,2}}
+	Transitions to:
+		Y-State with Information State {(2,2,dead)} via Event 2
+		Y-State with Information State {(0,0,0)} via Event 0
+*******************************************************************
+*********************End All Inclusive Controller******************
+*******************************************************************
+DBTS for T_R:
+******************************************************************************
+********************Determined Bipartite Transition System********************
+******************************************************************************
+Y-States:
+	Y_DBTS State: {(0,0,0)}
+	Transitions to:
+		Z_DBTS State {{(0,0,0),(1,1,1)},{0,1}}
+Z-States:
+	Z_DBTS State: {{(0,0,0),(1,1,1)},{0,1}}
+	Transitions to:
+		Y_DBTS State {(0,0,0)} via Event 0
+******************************************************************************
+********************Determined Bipartite Transition System********************
+******************************************************************************
+*******************************************************************
+********************Control Simulation Relation********************
+*******************************************************************
+Y state pairs:
+({(0,0,0)},{(0,0,0)})
+Z state pairs:
+({{(0,0,0),(1,1,1)},{0,1}},{{(0,0,0)},{0,2}})
+({{(0,0,0),(1,1,1)},{0,1}},{{(0,0,0)},{0}})
+({{(0,0,0),(1,1,1)},{0,1}},{{(0,0,0),(1,1,1)},{0,1,2}})
+({{(0,0,0),(1,1,1)},{0,1}},{{(0,0,0),(1,1,1)},{0,1}})
+*******************************************************************
+********************Control Simulation Relation********************
+*******************************************************************
+RESULT SUPERVISOR:
+******************************************************************************
+********************Determined Bipartite Transition System********************
+******************************************************************************
+Y-States:
+	Y_DBTS State: {(0,0,0)}
+	Transitions to:
+		Z_DBTS State {{(0,0,0),(1,1,1)},{0,1,2}}
+	Y_DBTS State: {(2,2,dead)}
+	Transitions to:
+		Z_DBTS State {{(2,2,dead),(3,3,dead)},{0,1}}
+	Y_DBTS State: {(2,3,dead)}
+	Transitions to:
+		Z_DBTS State {{(2,3,dead)},{0}}
+Z-States:
+	Z_DBTS State: {{(0,0,0),(1,1,1)},{0,1,2}}
+	Transitions to:
+		Y_DBTS State {(0,0,0)} via Event 0
+		Y_DBTS State {(2,2,dead)} via Event 2
+	Z_DBTS State: {{(2,2,dead),(3,3,dead)},{0,1}}
+	Transitions to:
+		Y_DBTS State {(2,3,dead)} via Event 0
+	Z_DBTS State: {{(2,3,dead)},{0}}
+	Transitions to:
+		Y_DBTS State {(2,2,dead)} via Event 0
+******************************************************************************
+********************Determined Bipartite Transition System********************
+******************************************************************************
+RESULT FSM:
+5 3
+
+(0,0,0) m
+(1,1,1) m
+(2,2,dead) m
+(3,3,dead) m
+(2,3,dead) m
+
+0 c o
+1 c u
+2 c o
+
+2 (2,2,dead) 1 (1,1,1) 0 (0,0,0)
+
+1 (3,3,dead) 0 (2,3,dead)
+
+0 (2,2,dead)
+Press any key to continue...

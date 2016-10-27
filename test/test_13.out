@@ -1,0 +1,348 @@
+FSM: 
+27 4
+
+(0,0,0) m
+(4,4,4) m
+(8,8,dead) m
+(12,12,dead) m
+(3,3,dead) m
+(9,9,2) m
+(4,4,dead) m
+(5,5,dead) m
+(9,9,dead) m
+(7,7,dead) m
+(13,dead,dead) m
+(14,dead,dead) m
+(1,1,dead) m
+(2,2,dead) m
+(8,dead,dead) m
+(9,dead,dead) m
+(10,dead,dead) m
+(10,10,dead) m
+(11,11,dead) m
+(4,dead,dead) m
+(5,dead,dead) m
+(11,dead,dead) m
+(12,dead,dead) m
+(3,dead,dead) m
+(7,dead,dead) m
+(1,dead,dead) m
+(2,dead,dead) m
+
+a c o
+b c o
+c u o
+d c u
+
+d (12,12,dead) c (8,8,dead) b (4,4,4) a (0,0,0)
+b (9,9,2) d (3,3,dead)
+d (5,5,dead) b (4,4,dead)
+
+
+
+b (9,9,dead) d (3,3,dead)
+c (14,dead,dead) b (13,dead,dead) a (7,7,dead)
+
+d (4,4,dead) c (3,3,dead) b (2,2,dead) a (1,1,dead)
+b (9,dead,dead) a (8,dead,dead)
+b (8,dead,dead) d (10,dead,dead)
+c (5,5,dead) b (3,3,dead) a (1,1,dead)
+d (11,11,dead) c (10,10,dead) b (2,2,dead)
+d (5,dead,dead) b (4,dead,dead)
+
+d (13,dead,dead) c (12,dead,dead) b (11,dead,dead) a (10,dead,dead)
+d (13,dead,dead) c (12,12,dead) b (11,11,dead) a (10,10,dead)
+d (4,4,dead) c (3,3,dead) a (9,9,dead)
+b (9,dead,dead) d (3,dead,dead)
+c (14,dead,dead) b (13,dead,dead) a (7,dead,dead)
+d (4,dead,dead) c (3,dead,dead) a (9,dead,dead)
+
+
+d (4,dead,dead) c (3,dead,dead) b (2,dead,dead) a (1,dead,dead)
+c (5,dead,dead) b (3,dead,dead) a (1,dead,dead)
+d (11,dead,dead) c (10,dead,dead) b (2,dead,dead)
+REQ_FSM: 
+3 4
+
+(0,0,0) m
+(4,4,4) m
+(9,9,2) m
+
+a c o
+b c o
+c u o
+d c u
+
+a (0,0,0) b (4,4,4)
+b (9,9,2)
+
+*******************************************************************
+*********************All Inclusive Controller**********************
+*******************************************************************
+Y-States:
+	Information State: {(0,0,0)}
+	Transitions to:
+		Z-State with Information State {{(0,0,0),(12,12,dead)},{a,b,d}} via Control Decision {a,b,d}
+		Z-State with Information State {{(0,0,0),(12,12,dead)},{b,d}} via Control Decision {b,d}
+		Z-State with Information State {{(0,0,0),(12,12,dead)},{a,d}} via Control Decision {a,d}
+		Z-State with Information State {{(0,0,0),(12,12,dead)},{d}} via Control Decision {d}
+		Z-State with Information State {{(0,0,0)},{a,b}} via Control Decision {a,b}
+		Z-State with Information State {{(0,0,0)},{b}} via Control Decision {b}
+		Z-State with Information State {{(0,0,0)},{a}} via Control Decision {a}
+		Z-State with Information State {{(0,0,0)},{}} via Control Decision {}
+	Information State: {(8,8,dead)}
+	Transitions to:
+		Z-State with Information State {{(8,8,dead)},{b}} via Control Decision {b}
+		Z-State with Information State {{(8,8,dead)},{}} via Control Decision {}
+	Information State: {(4,4,dead)}
+	Transitions to:
+		Z-State with Information State {{(3,3,dead),(4,4,dead)},{b,d}} via Control Decision {b,d}
+		Z-State with Information State {{(3,3,dead),(4,4,dead)},{d}} via Control Decision {d}
+		Z-State with Information State {{(4,4,dead)},{b}} via Control Decision {b}
+		Z-State with Information State {{(4,4,dead)},{}} via Control Decision {}
+	Information State: {(9,9,dead)}
+	Transitions to:
+		Z-State with Information State {{(9,9,dead)},{}} via Control Decision {}
+	Information State: {(4,4,4)}
+	Transitions to:
+		Z-State with Information State {{(4,4,4),(3,3,dead)},{b,d}} via Control Decision {b,d}
+		Z-State with Information State {{(4,4,4),(3,3,dead)},{d}} via Control Decision {d}
+		Z-State with Information State {{(4,4,4)},{b}} via Control Decision {b}
+		Z-State with Information State {{(4,4,4)},{}} via Control Decision {}
+	Information State: {(9,9,2)}
+	Transitions to:
+		Z-State with Information State {{(9,9,2)},{}} via Control Decision {}
+Z-States:
+	Information State: {{(0,0,0)},{}}
+	Transitions to:
+		Y-State with Information State {(8,8,dead)} via Event c
+	Information State: {{(8,8,dead)},{}}
+	Information State: {{(8,8,dead)},{b}}
+	Transitions to:
+		Y-State with Information State {(4,4,dead)} via Event b
+	Information State: {{(4,4,dead)},{}}
+	Information State: {{(4,4,dead)},{b}}
+	Transitions to:
+		Y-State with Information State {(9,9,dead)} via Event b
+	Information State: {{(9,9,dead)},{}}
+	Information State: {{(3,3,dead),(4,4,dead)},{d}}
+	Information State: {{(3,3,dead),(4,4,dead)},{b,d}}
+	Transitions to:
+		Y-State with Information State {(9,9,dead)} via Event b
+	Information State: {{(0,0,0)},{a}}
+	Transitions to:
+		Y-State with Information State {(8,8,dead)} via Event c
+		Y-State with Information State {(0,0,0)} via Event a
+	Information State: {{(0,0,0)},{b}}
+	Transitions to:
+		Y-State with Information State {(8,8,dead)} via Event c
+		Y-State with Information State {(4,4,4)} via Event b
+	Information State: {{(4,4,4)},{}}
+	Information State: {{(4,4,4)},{b}}
+	Transitions to:
+		Y-State with Information State {(9,9,2)} via Event b
+	Information State: {{(9,9,2)},{}}
+	Information State: {{(4,4,4),(3,3,dead)},{d}}
+	Information State: {{(4,4,4),(3,3,dead)},{b,d}}
+	Transitions to:
+		Y-State with Information State {(9,9,2)} via Event b
+	Information State: {{(0,0,0)},{a,b}}
+	Transitions to:
+		Y-State with Information State {(8,8,dead)} via Event c
+		Y-State with Information State {(4,4,4)} via Event b
+		Y-State with Information State {(0,0,0)} via Event a
+	Information State: {{(0,0,0),(12,12,dead)},{d}}
+	Transitions to:
+		Y-State with Information State {(8,8,dead)} via Event c
+	Information State: {{(0,0,0),(12,12,dead)},{a,d}}
+	Transitions to:
+		Y-State with Information State {(8,8,dead)} via Event c
+		Y-State with Information State {(0,0,0)} via Event a
+	Information State: {{(0,0,0),(12,12,dead)},{b,d}}
+	Transitions to:
+		Y-State with Information State {(8,8,dead)} via Event c
+		Y-State with Information State {(4,4,4)} via Event b
+	Information State: {{(0,0,0),(12,12,dead)},{a,b,d}}
+	Transitions to:
+		Y-State with Information State {(8,8,dead)} via Event c
+		Y-State with Information State {(4,4,4)} via Event b
+		Y-State with Information State {(0,0,0)} via Event a
+*******************************************************************
+*********************End All Inclusive Controller******************
+*******************************************************************
+DBTS for T_R:
+******************************************************************************
+********************Determined Bipartite Transition System********************
+******************************************************************************
+Y-States:
+	Y_DBTS State: {(0,0,0)}
+	Transitions to:
+		Z_DBTS State {{(0,0,0)},{a,b}}
+	Y_DBTS State: {(8,8,dead)}
+	Transitions to:
+		Z_DBTS State {{(8,8,dead)},{}}
+	Y_DBTS State: {(4,4,4)}
+	Transitions to:
+		Z_DBTS State {{(4,4,4)},{b}}
+	Y_DBTS State: {(9,9,2)}
+	Transitions to:
+		Z_DBTS State {{(9,9,2)},{}}
+Z-States:
+	Z_DBTS State: {{(0,0,0)},{a,b}}
+	Transitions to:
+		Y_DBTS State {(0,0,0)} via Event a
+		Y_DBTS State {(4,4,4)} via Event b
+		Y_DBTS State {(8,8,dead)} via Event c
+	Z_DBTS State: {{(8,8,dead)},{}}
+	Z_DBTS State: {{(4,4,4)},{b}}
+	Transitions to:
+		Y_DBTS State {(9,9,2)} via Event b
+	Z_DBTS State: {{(9,9,2)},{}}
+******************************************************************************
+********************Determined Bipartite Transition System********************
+******************************************************************************
+*******************************************************************
+********************Control Simulation Relation********************
+*******************************************************************
+Y state pairs:
+({(9,9,2)},{(9,9,2)})
+({(8,8,dead)},{(4,4,dead)})
+({(9,9,2)},{(8,8,dead)})
+({(9,9,2)},{(4,4,4)})
+({(8,8,dead)},{(9,9,2)})
+({(8,8,dead)},{(0,0,0)})
+({(0,0,0)},{(0,0,0)})
+({(8,8,dead)},{(8,8,dead)})
+({(9,9,2)},{(9,9,dead)})
+({(4,4,4)},{(0,0,0)})
+({(8,8,dead)},{(4,4,4)})
+({(4,4,4)},{(4,4,dead)})
+({(9,9,2)},{(4,4,dead)})
+({(8,8,dead)},{(9,9,dead)})
+({(4,4,4)},{(8,8,dead)})
+({(9,9,2)},{(0,0,0)})
+({(4,4,4)},{(4,4,4)})
+Z state pairs:
+({{(9,9,2)},{}},{{(0,0,0),(12,12,dead)},{a,b,d}})
+({{(4,4,4)},{b}},{{(0,0,0),(12,12,dead)},{a,b,d}})
+({{(0,0,0)},{a,b}},{{(0,0,0),(12,12,dead)},{a,b,d}})
+({{(9,9,2)},{}},{{(0,0,0),(12,12,dead)},{b,d}})
+({{(4,4,4)},{b}},{{(0,0,0),(12,12,dead)},{b,d}})
+({{(8,8,dead)},{}},{{(0,0,0),(12,12,dead)},{a,d}})
+({{(9,9,2)},{}},{{(0,0,0),(12,12,dead)},{d}})
+({{(8,8,dead)},{}},{{(0,0,0),(12,12,dead)},{d}})
+({{(9,9,2)},{}},{{(0,0,0)},{a,b}})
+({{(4,4,4)},{b}},{{(0,0,0)},{a,b}})
+({{(8,8,dead)},{}},{{(0,0,0)},{a,b}})
+({{(9,9,2)},{}},{{(4,4,4),(3,3,dead)},{b,d}})
+({{(4,4,4)},{b}},{{(4,4,4),(3,3,dead)},{b,d}})
+({{(8,8,dead)},{}},{{(4,4,4),(3,3,dead)},{b,d}})
+({{(8,8,dead)},{}},{{(4,4,4),(3,3,dead)},{d}})
+({{(8,8,dead)},{}},{{(0,0,0),(12,12,dead)},{a,b,d}})
+({{(9,9,2)},{}},{{(4,4,4)},{b}})
+({{(4,4,4)},{b}},{{(4,4,4)},{b}})
+({{(8,8,dead)},{}},{{(0,0,0),(12,12,dead)},{b,d}})
+({{(9,9,2)},{}},{{(4,4,4),(3,3,dead)},{d}})
+({{(8,8,dead)},{}},{{(8,8,dead)},{b}})
+({{(8,8,dead)},{}},{{(4,4,4)},{b}})
+({{(8,8,dead)},{}},{{(9,9,dead)},{}})
+({{(9,9,2)},{}},{{(4,4,dead)},{b}})
+({{(0,0,0)},{a,b}},{{(0,0,0)},{a,b}})
+({{(8,8,dead)},{}},{{(4,4,dead)},{}})
+({{(4,4,4)},{b}},{{(4,4,dead)},{b}})
+({{(9,9,2)},{}},{{(9,9,2)},{}})
+({{(8,8,dead)},{}},{{(8,8,dead)},{}})
+({{(8,8,dead)},{}},{{(3,3,dead),(4,4,dead)},{d}})
+({{(8,8,dead)},{}},{{(4,4,dead)},{b}})
+({{(9,9,2)},{}},{{(4,4,dead)},{}})
+({{(4,4,4)},{b}},{{(8,8,dead)},{b}})
+({{(8,8,dead)},{}},{{(9,9,2)},{}})
+({{(9,9,2)},{}},{{(9,9,dead)},{}})
+({{(8,8,dead)},{}},{{(0,0,0)},{a}})
+({{(9,9,2)},{}},{{(0,0,0)},{b}})
+({{(9,9,2)},{}},{{(4,4,4)},{}})
+({{(9,9,2)},{}},{{(8,8,dead)},{b}})
+({{(9,9,2)},{}},{{(8,8,dead)},{}})
+({{(9,9,2)},{}},{{(3,3,dead),(4,4,dead)},{d}})
+({{(4,4,4)},{b}},{{(0,0,0)},{b}})
+({{(8,8,dead)},{}},{{(0,0,0)},{b}})
+({{(8,8,dead)},{}},{{(4,4,4)},{}})
+({{(8,8,dead)},{}},{{(0,0,0)},{}})
+({{(9,9,2)},{}},{{(0,0,0)},{}})
+({{(8,8,dead)},{}},{{(3,3,dead),(4,4,dead)},{b,d}})
+({{(9,9,2)},{}},{{(0,0,0)},{a}})
+({{(9,9,2)},{}},{{(0,0,0),(12,12,dead)},{a,d}})
+({{(4,4,4)},{b}},{{(3,3,dead),(4,4,dead)},{b,d}})
+({{(9,9,2)},{}},{{(3,3,dead),(4,4,dead)},{b,d}})
+*******************************************************************
+********************Control Simulation Relation********************
+*******************************************************************
+RESULT SUPERVISOR:
+******************************************************************************
+********************Determined Bipartite Transition System********************
+******************************************************************************
+Y-States:
+	Y_DBTS State: {(0,0,0)}
+	Transitions to:
+		Z_DBTS State {{(0,0,0),(12,12,dead)},{a,b,d}}
+	Y_DBTS State: {(8,8,dead)}
+	Transitions to:
+		Z_DBTS State {{(8,8,dead)},{b}}
+	Y_DBTS State: {(4,4,dead)}
+	Transitions to:
+		Z_DBTS State {{(3,3,dead),(4,4,dead)},{b,d}}
+	Y_DBTS State: {(9,9,dead)}
+	Transitions to:
+		Z_DBTS State {{(9,9,dead)},{}}
+	Y_DBTS State: {(4,4,4)}
+	Transitions to:
+		Z_DBTS State {{(4,4,4),(3,3,dead)},{b,d}}
+	Y_DBTS State: {(9,9,2)}
+	Transitions to:
+		Z_DBTS State {{(9,9,2)},{}}
+Z-States:
+	Z_DBTS State: {{(0,0,0),(12,12,dead)},{a,b,d}}
+	Transitions to:
+		Y_DBTS State {(0,0,0)} via Event a
+		Y_DBTS State {(4,4,4)} via Event b
+		Y_DBTS State {(8,8,dead)} via Event c
+	Z_DBTS State: {{(8,8,dead)},{b}}
+	Transitions to:
+		Y_DBTS State {(4,4,dead)} via Event b
+	Z_DBTS State: {{(3,3,dead),(4,4,dead)},{b,d}}
+	Transitions to:
+		Y_DBTS State {(9,9,dead)} via Event b
+	Z_DBTS State: {{(9,9,dead)},{}}
+	Z_DBTS State: {{(4,4,4),(3,3,dead)},{b,d}}
+	Transitions to:
+		Y_DBTS State {(9,9,2)} via Event b
+	Z_DBTS State: {{(9,9,2)},{}}
+******************************************************************************
+********************Determined Bipartite Transition System********************
+******************************************************************************
+RESULT FSM:
+8 4
+
+(0,0,0) m
+(12,12,dead) m
+(8,8,dead) m
+(3,3,dead) m
+(4,4,dead) m
+(9,9,dead) m
+(4,4,4) m
+(9,9,2) m
+
+a c o
+b c o
+c u o
+d c u
+
+d (12,12,dead) b (4,4,4) a (0,0,0) c (8,8,dead)
+
+b (4,4,dead)
+
+d (3,3,dead) b (9,9,dead)
+
+d (3,3,dead) b (9,9,2)
+
+Press any key to continue...

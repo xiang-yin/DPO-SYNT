@@ -1,0 +1,26 @@
+7
+
+1	0	2
+sig1	4	c	uo
+e	2	uc	uo
+
+2	0	1
+o	3	uc	o
+
+3	0	1
+f	7	uc	uo
+
+4	0	1
+sig2	5	c	uo
+
+5	0	1
+o	6	uc	o
+
+6	0	3
+sig1	6	c	uo
+e	6	uc	uo
+o	3	uc	o
+
+7	0	1
+e	7	uc	uo
+

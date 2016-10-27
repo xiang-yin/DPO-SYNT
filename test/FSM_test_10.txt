@@ -1,0 +1,33 @@
+11 7
+
+0 u
+1 u
+2 u
+3 u
+4 u
+5 u
+6 u
+7 m
+8 m
+9 u
+10 u
+
+a1 u u
+a2 u u
+b1 u u
+b2 u u
+c1 c u
+c2 c u
+o u o
+
+a1 1 a2 2
+o 3
+o 4
+o 3 c1 5
+o 4 c2 6
+b1 7 c2 9
+b2 8 c1 10
+o 3
+o 4
+
+

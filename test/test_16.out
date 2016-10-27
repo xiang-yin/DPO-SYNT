@@ -1,0 +1,86 @@
+FSM: 
+14 2
+
+(0,0,0) m
+(1,1,0) m
+(2,2,1) m
+(3,3,0) m
+(4,dead,1) m
+(3,3,dead) m
+(4,dead,dead) m
+(0,dead,dead) m
+(3,dead,dead) m
+(0,0,dead) m
+(1,dead,dead) m
+(2,dead,dead) m
+(1,1,dead) m
+(2,2,dead) m
+
+a c o
+b c u
+
+b (2,2,1) a (1,1,0)
+b (4,dead,1) a (3,3,0)
+a (4,dead,dead) b (3,3,dead)
+b (4,dead,1) a (0,0,0)
+a (3,dead,dead) b (0,dead,dead)
+b (4,dead,dead) a (0,0,dead)
+a (3,dead,dead) b (0,dead,dead)
+b (2,dead,dead) a (1,dead,dead)
+b (4,dead,dead) a (0,dead,dead)
+b (2,2,dead) a (1,1,dead)
+b (4,dead,dead) a (3,dead,dead)
+a (4,dead,dead) b (3,dead,dead)
+b (4,dead,dead) a (3,3,dead)
+a (4,dead,dead) b (3,3,dead)
+REQ_FSM: 
+5 2
+
+(0,0,0) m
+(1,1,0) m
+(2,2,1) u
+(3,3,0) m
+(4,dead,1) m
+
+a c o
+b c u
+
+a (1,1,0) b (2,2,1)
+a (3,3,0) b (4,dead,1)
+
+a (0,0,0) b (4,dead,1)
+
+*******************************************************************
+*********************All Inclusive Controller**********************
+*******************************************************************
+Y-States:
+	Information State: {(0,0,0)}
+	Transitions to:
+		Z-State with Information State {{(0,0,0)},{a}} via Control Decision {a}
+		Z-State with Information State {{(0,0,0)},{}} via Control Decision {}
+	Information State: {(1,1,0)}
+	Transitions to:
+		Z-State with Information State {{(1,1,0)},{a}} via Control Decision {a}
+		Z-State with Information State {{(1,1,0)},{}} via Control Decision {}
+	Information State: {(3,3,0)}
+	Transitions to:
+		Z-State with Information State {{(3,3,0)},{a}} via Control Decision {a}
+		Z-State with Information State {{(3,3,0)},{}} via Control Decision {}
+Z-States:
+	Information State: {{(0,0,0)},{}}
+	Information State: {{(0,0,0)},{a}}
+	Transitions to:
+		Y-State with Information State {(1,1,0)} via Event a
+	Information State: {{(1,1,0)},{}}
+	Information State: {{(1,1,0)},{a}}
+	Transitions to:
+		Y-State with Information State {(3,3,0)} via Event a
+	Information State: {{(3,3,0)},{}}
+	Information State: {{(3,3,0)},{a}}
+	Transitions to:
+		Y-State with Information State {(0,0,0)} via Event a
+*******************************************************************
+*********************End All Inclusive Controller******************
+*******************************************************************
+No Solution
+Press any key to continue...

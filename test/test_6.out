@@ -1,0 +1,143 @@
+FSM: 
+4 3
+
+(0,0,0) m
+(0,0,1) m
+(0,0,dead) m
+(0,0,2) m
+
+a u u
+b c u
+c c o
+
+c (0,0,dead) b (0,0,dead) a (0,0,1)
+c (0,0,dead) b (0,0,2) a (0,0,dead)
+c (0,0,dead) b (0,0,dead) a (0,0,dead)
+c (0,0,0) b (0,0,dead) a (0,0,dead)
+REQ_FSM: 
+3 3
+
+(0,0,0) m
+(0,0,1) m
+(0,0,2) m
+
+a u u
+b c u
+c c o
+
+a (0,0,1)
+b (0,0,2)
+c (0,0,0)
+*******************************************************************
+*********************All Inclusive Controller**********************
+*******************************************************************
+Y-States:
+	Information State: {(0,0,0)}
+	Transitions to:
+		Z-State with Information State {{(0,0,0),(0,0,1),(0,0,dead)},{c}} via Control Decision {c}
+		Z-State with Information State {{(0,0,0),(0,0,1),(0,0,dead),(0,0,2)},{b}} via Control Decision {b}
+		Z-State with Information State {{(0,0,0),(0,0,1),(0,0,dead),(0,0,2)},{b,c}} via Control Decision {b,c}
+		Z-State with Information State {{(0,0,0),(0,0,1),(0,0,dead)},{}} via Control Decision {}
+	Information State: {(0,0,dead)}
+	Transitions to:
+		Z-State with Information State {{(0,0,dead)},{c}} via Control Decision {c}
+		Z-State with Information State {{(0,0,dead)},{b}} via Control Decision {b}
+		Z-State with Information State {{(0,0,dead)},{b,c}} via Control Decision {b,c}
+		Z-State with Information State {{(0,0,dead)},{}} via Control Decision {}
+	Information State: {(0,0,0),(0,0,dead)}
+	Transitions to:
+		Z-State with Information State {{(0,0,0),(0,0,1),(0,0,dead)},{c}} via Control Decision {c}
+		Z-State with Information State {{(0,0,0),(0,0,1),(0,0,dead),(0,0,2)},{b}} via Control Decision {b}
+		Z-State with Information State {{(0,0,0),(0,0,1),(0,0,dead),(0,0,2)},{b,c}} via Control Decision {b,c}
+		Z-State with Information State {{(0,0,0),(0,0,1),(0,0,dead)},{}} via Control Decision {}
+Z-States:
+	Information State: {{(0,0,0),(0,0,1),(0,0,dead)},{}}
+	Information State: {{(0,0,0),(0,0,1),(0,0,dead),(0,0,2)},{b}}
+	Information State: {{(0,0,0),(0,0,1),(0,0,dead)},{c}}
+	Transitions to:
+		Y-State with Information State {(0,0,dead)} via Event c
+	Information State: {{(0,0,dead)},{}}
+	Information State: {{(0,0,dead)},{b}}
+	Information State: {{(0,0,dead)},{c}}
+	Transitions to:
+		Y-State with Information State {(0,0,dead)} via Event c
+	Information State: {{(0,0,dead)},{b,c}}
+	Transitions to:
+		Y-State with Information State {(0,0,dead)} via Event c
+	Information State: {{(0,0,0),(0,0,1),(0,0,dead),(0,0,2)},{b,c}}
+	Transitions to:
+		Y-State with Information State {(0,0,0),(0,0,dead)} via Event c
+*******************************************************************
+*********************End All Inclusive Controller******************
+*******************************************************************
+DBTS for T_R:
+******************************************************************************
+********************Determined Bipartite Transition System********************
+******************************************************************************
+Y-States:
+	Y_DBTS State: {(0,0,0)}
+	Transitions to:
+		Z_DBTS State {{(0,0,0),(0,0,1),(0,0,dead),(0,0,2)},{b,c}}
+	Y_DBTS State: {(0,0,0),(0,0,dead)}
+	Transitions to:
+		Z_DBTS State {{(0,0,0),(0,0,1),(0,0,dead),(0,0,2)},{b,c}}
+Z-States:
+	Z_DBTS State: {{(0,0,0),(0,0,1),(0,0,dead),(0,0,2)},{b,c}}
+	Transitions to:
+		Y_DBTS State {(0,0,0),(0,0,dead)} via Event c
+******************************************************************************
+********************Determined Bipartite Transition System********************
+******************************************************************************
+*******************************************************************
+********************Control Simulation Relation********************
+*******************************************************************
+Y state pairs:
+({(0,0,0),(0,0,dead)},{(0,0,0),(0,0,dead)})
+({(0,0,0)},{(0,0,0),(0,0,dead)})
+({(0,0,0)},{(0,0,dead)})
+({(0,0,0),(0,0,dead)},{(0,0,dead)})
+({(0,0,0),(0,0,dead)},{(0,0,0)})
+({(0,0,0)},{(0,0,0)})
+Z state pairs:
+({{(0,0,0),(0,0,1),(0,0,dead),(0,0,2)},{b,c}},{{(0,0,0),(0,0,1),(0,0,dead),(0,0,2)},{b,c}})
+({{(0,0,0),(0,0,1),(0,0,dead),(0,0,2)},{b,c}},{{(0,0,dead)},{b,c}})
+({{(0,0,0),(0,0,1),(0,0,dead),(0,0,2)},{b,c}},{{(0,0,dead)},{c}})
+({{(0,0,0),(0,0,1),(0,0,dead),(0,0,2)},{b,c}},{{(0,0,0),(0,0,1),(0,0,dead)},{c}})
+*******************************************************************
+********************Control Simulation Relation********************
+*******************************************************************
+RESULT SUPERVISOR:
+******************************************************************************
+********************Determined Bipartite Transition System********************
+******************************************************************************
+Y-States:
+	Y_DBTS State: {(0,0,0)}
+	Transitions to:
+		Z_DBTS State {{(0,0,0),(0,0,1),(0,0,dead),(0,0,2)},{b,c}}
+	Y_DBTS State: {(0,0,0),(0,0,dead)}
+	Transitions to:
+		Z_DBTS State {{(0,0,0),(0,0,1),(0,0,dead),(0,0,2)},{b,c}}
+Z-States:
+	Z_DBTS State: {{(0,0,0),(0,0,1),(0,0,dead),(0,0,2)},{b,c}}
+	Transitions to:
+		Y_DBTS State {(0,0,0),(0,0,dead)} via Event c
+******************************************************************************
+********************Determined Bipartite Transition System********************
+******************************************************************************
+RESULT FSM:
+4 3
+
+(0,0,0) m
+(0,0,1) m
+(0,0,dead) m
+(0,0,2) m
+
+a u u
+b c u
+c c o
+
+c (0,0,dead) b (0,0,dead) a (0,0,1)
+c (0,0,dead) b (0,0,2) a (0,0,dead)
+c (0,0,dead) b (0,0,dead) a (0,0,dead)
+c (0,0,0) b (0,0,dead) a (0,0,dead)
+Press any key to continue...

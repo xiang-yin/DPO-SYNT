@@ -1,0 +1,190 @@
+FSM: 
+11 5
+
+(1,1,1) m
+(3,3,3) m
+(2,2,dead) m
+(4,4,4) m
+(5,5,5) m
+(6,6,dead) m
+(3,3,dead) m
+(4,4,dead) m
+(6,6,6) m
+(5,5,dead) m
+(7,dead,dead) m
+
+a u o
+b u o
+c1 c u
+c2 c u
+u u u
+
+b (4,4,4) u (2,2,dead) a (3,3,3)
+c2 (6,6,dead) c1 (5,5,5)
+a (4,4,dead) b (3,3,dead)
+c1 (5,5,dead) c2 (6,6,6)
+c2 (7,dead,dead)
+c1 (7,dead,dead)
+c2 (6,6,dead) c1 (5,5,dead)
+c1 (5,5,dead) c2 (6,6,dead)
+c1 (7,dead,dead)
+c2 (7,dead,dead)
+
+REQ_FSM: 
+5 5
+
+(1,1,1) m
+(3,3,3) m
+(4,4,4) m
+(5,5,5) m
+(6,6,6) m
+
+a u o
+b u o
+c1 c u
+c2 c u
+u u u
+
+a (3,3,3) b (4,4,4)
+c1 (5,5,5)
+c2 (6,6,6)
+
+
+*******************************************************************
+*********************All Inclusive Controller**********************
+*******************************************************************
+Y-States:
+	Information State: {(1,1,1)}
+	Transitions to:
+		Z-State with Information State {{(1,1,1),(2,2,dead)},{}} via Control Decision {}
+	Information State: {(3,3,3),(4,4,dead)}
+	Transitions to:
+		Z-State with Information State {{(3,3,3),(6,6,dead),(4,4,dead)},{c2}} via Control Decision {c2}
+		Z-State with Information State {{(3,3,3),(5,5,5),(4,4,dead),(5,5,dead)},{c1}} via Control Decision {c1}
+		Z-State with Information State {{(3,3,3),(4,4,dead)},{}} via Control Decision {}
+	Information State: {(4,4,4),(3,3,dead)}
+	Transitions to:
+		Z-State with Information State {{(4,4,4),(6,6,dead),(3,3,dead),(6,6,6)},{c2}} via Control Decision {c2}
+		Z-State with Information State {{(4,4,4),(3,3,dead),(5,5,dead)},{c1}} via Control Decision {c1}
+		Z-State with Information State {{(4,4,4),(3,3,dead)},{}} via Control Decision {}
+Z-States:
+	Information State: {{(1,1,1),(2,2,dead)},{}}
+	Transitions to:
+		Y-State with Information State {(4,4,4),(3,3,dead)} via Event b
+		Y-State with Information State {(3,3,3),(4,4,dead)} via Event a
+	Information State: {{(3,3,3),(4,4,dead)},{}}
+	Information State: {{(3,3,3),(5,5,5),(4,4,dead),(5,5,dead)},{c1}}
+	Information State: {{(3,3,3),(6,6,dead),(4,4,dead)},{c2}}
+	Information State: {{(4,4,4),(3,3,dead)},{}}
+	Information State: {{(4,4,4),(3,3,dead),(5,5,dead)},{c1}}
+	Information State: {{(4,4,4),(6,6,dead),(3,3,dead),(6,6,6)},{c2}}
+*******************************************************************
+*********************End All Inclusive Controller******************
+*******************************************************************
+DBTS for T_R:
+******************************************************************************
+********************Determined Bipartite Transition System********************
+******************************************************************************
+Y-States:
+	Y_DBTS State: {(1,1,1)}
+	Transitions to:
+		Z_DBTS State {{(1,1,1),(2,2,dead)},{}}
+	Y_DBTS State: {(4,4,4),(3,3,dead)}
+	Transitions to:
+		Z_DBTS State {{(4,4,4),(6,6,dead),(3,3,dead),(6,6,6)},{c2}}
+	Y_DBTS State: {(3,3,3),(4,4,dead)}
+	Transitions to:
+		Z_DBTS State {{(3,3,3),(5,5,5),(4,4,dead),(5,5,dead)},{c1}}
+Z-States:
+	Z_DBTS State: {{(1,1,1),(2,2,dead)},{}}
+	Transitions to:
+		Y_DBTS State {(3,3,3),(4,4,dead)} via Event a
+		Y_DBTS State {(4,4,4),(3,3,dead)} via Event b
+	Z_DBTS State: {{(4,4,4),(6,6,dead),(3,3,dead),(6,6,6)},{c2}}
+	Z_DBTS State: {{(3,3,3),(5,5,5),(4,4,dead),(5,5,dead)},{c1}}
+******************************************************************************
+********************Determined Bipartite Transition System********************
+******************************************************************************
+*******************************************************************
+********************Control Simulation Relation********************
+*******************************************************************
+Y state pairs:
+({(3,3,3),(4,4,dead)},{(4,4,4),(3,3,dead)})
+({(4,4,4),(3,3,dead)},{(4,4,4),(3,3,dead)})
+({(3,3,3),(4,4,dead)},{(3,3,3),(4,4,dead)})
+({(4,4,4),(3,3,dead)},{(3,3,3),(4,4,dead)})
+({(1,1,1)},{(1,1,1)})
+Z state pairs:
+({{(3,3,3),(5,5,5),(4,4,dead),(5,5,dead)},{c1}},{{(4,4,4),(6,6,dead),(3,3,dead),(6,6,6)},{c2}})
+({{(4,4,4),(6,6,dead),(3,3,dead),(6,6,6)},{c2}},{{(4,4,4),(6,6,dead),(3,3,dead),(6,6,6)},{c2}})
+({{(3,3,3),(5,5,5),(4,4,dead),(5,5,dead)},{c1}},{{(4,4,4),(3,3,dead),(5,5,dead)},{c1}})
+({{(4,4,4),(6,6,dead),(3,3,dead),(6,6,6)},{c2}},{{(4,4,4),(3,3,dead),(5,5,dead)},{c1}})
+({{(3,3,3),(5,5,5),(4,4,dead),(5,5,dead)},{c1}},{{(4,4,4),(3,3,dead)},{}})
+({{(3,3,3),(5,5,5),(4,4,dead),(5,5,dead)},{c1}},{{(3,3,3),(6,6,dead),(4,4,dead)},{c2}})
+({{(1,1,1),(2,2,dead)},{}},{{(1,1,1),(2,2,dead)},{}})
+({{(4,4,4),(6,6,dead),(3,3,dead),(6,6,6)},{c2}},{{(4,4,4),(3,3,dead)},{}})
+({{(4,4,4),(6,6,dead),(3,3,dead),(6,6,6)},{c2}},{{(1,1,1),(2,2,dead)},{}})
+({{(4,4,4),(6,6,dead),(3,3,dead),(6,6,6)},{c2}},{{(3,3,3),(5,5,5),(4,4,dead),(5,5,dead)},{c1}})
+({{(3,3,3),(5,5,5),(4,4,dead),(5,5,dead)},{c1}},{{(3,3,3),(4,4,dead)},{}})
+({{(3,3,3),(5,5,5),(4,4,dead),(5,5,dead)},{c1}},{{(1,1,1),(2,2,dead)},{}})
+({{(4,4,4),(6,6,dead),(3,3,dead),(6,6,6)},{c2}},{{(3,3,3),(4,4,dead)},{}})
+({{(4,4,4),(6,6,dead),(3,3,dead),(6,6,6)},{c2}},{{(3,3,3),(6,6,dead),(4,4,dead)},{c2}})
+({{(3,3,3),(5,5,5),(4,4,dead),(5,5,dead)},{c1}},{{(3,3,3),(5,5,5),(4,4,dead),(5,5,dead)},{c1}})
+*******************************************************************
+********************Control Simulation Relation********************
+*******************************************************************
+RESULT SUPERVISOR:
+******************************************************************************
+********************Determined Bipartite Transition System********************
+******************************************************************************
+Y-States:
+	Y_DBTS State: {(1,1,1)}
+	Transitions to:
+		Z_DBTS State {{(1,1,1),(2,2,dead)},{}}
+	Y_DBTS State: {(4,4,4),(3,3,dead)}
+	Transitions to:
+		Z_DBTS State {{(4,4,4),(6,6,dead),(3,3,dead),(6,6,6)},{c2}}
+	Y_DBTS State: {(3,3,3),(4,4,dead)}
+	Transitions to:
+		Z_DBTS State {{(3,3,3),(5,5,5),(4,4,dead),(5,5,dead)},{c1}}
+Z-States:
+	Z_DBTS State: {{(1,1,1),(2,2,dead)},{}}
+	Transitions to:
+		Y_DBTS State {(3,3,3),(4,4,dead)} via Event a
+		Y_DBTS State {(4,4,4),(3,3,dead)} via Event b
+	Z_DBTS State: {{(4,4,4),(6,6,dead),(3,3,dead),(6,6,6)},{c2}}
+	Z_DBTS State: {{(3,3,3),(5,5,5),(4,4,dead),(5,5,dead)},{c1}}
+******************************************************************************
+********************Determined Bipartite Transition System********************
+******************************************************************************
+RESULT FSM:
+10 5
+
+(1,1,1) m
+(2,2,dead) m
+(4,4,4) m
+(6,6,dead) m
+(3,3,dead) m
+(6,6,6) m
+(3,3,3) m
+(5,5,5) m
+(4,4,dead) m
+(5,5,dead) m
+
+a u o
+b u o
+c1 c u
+c2 c u
+u u u
+
+u (2,2,dead) b (4,4,4) a (3,3,3)
+b (3,3,dead) a (4,4,dead)
+c2 (6,6,6)
+
+c2 (6,6,dead)
+
+c1 (5,5,5)
+
+c1 (5,5,dead)
+
+Press any key to continue...

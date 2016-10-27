@@ -1,0 +1,27 @@
+8 6
+
+1 m
+2 m
+3 m
+4 m
+5 m
+6 m
+7 m
+8 m
+
+
+a c u
+b c u
+c c u
+o c o
+uc u o
+t u u
+
+b 2 o 5 t 1
+a 3 o 4 t 2
+
+a 6 c 1 t 4
+a 7 t 5
+uc 8
+t 7
+

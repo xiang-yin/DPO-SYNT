@@ -1,0 +1,16 @@
+5 2
+
+0 m
+1 m
+2 m
+3 m
+4 m
+
+a c o
+b c u
+
+a 1 b 2
+a 3 b 4
+b 3 a 4
+a 0 b 4
+b 0 a 3

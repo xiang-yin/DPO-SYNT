@@ -1,0 +1,23 @@
+7 5
+
+1 u
+2 u
+3 u
+4 u
+5 u
+6 u
+7 u
+
+e u u
+f u u
+o u o
+sig1 c u
+sig2 c u
+
+e 2 sig1 4
+o 3
+f 7
+sig2 5
+o 6
+o 3 e 6 sig1 6
+e 7

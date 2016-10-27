@@ -1,0 +1,34 @@
+12 6
+
+0 m
+1 m
+2 m
+3 m
+4 m
+5 m
+6 m
+7 m
+8 m
+9 m
+10 m
+11 m
+
+a c o
+b c o
+c u u
+d u o
+e u o
+f c u
+
+a 1
+b 2
+c 3
+d 4
+e 5
+f 6
+a 1 b 7
+b 2 c 8
+c 3 d 9
+d 4 e 10
+e 5 f 11
+f 6

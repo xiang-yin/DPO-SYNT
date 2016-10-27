@@ -1,0 +1,21 @@
+7 4
+
+1 m
+2 m
+3 m
+4 m
+5 m
+6 m
+7 m
+
+a u o
+b u o
+v c o
+w c u
+
+w 2 a 3
+a 4
+v 1 w 5
+b 6 v 7
+b 6
+w 5 v 7

@@ -1,0 +1,35 @@
+FSM: 
+7 2
+
+(1,1,1) m
+(2,2,2) m
+(3,3,dead) m
+(4,4,dead) m
+(5,5,dead) m
+(6,6,dead) m
+(7,dead,dead) m
+
+a u o
+b u o
+
+b (2,2,2) a (1,1,1)
+b (3,3,dead) a (2,2,2)
+b (4,4,dead) a (3,3,dead)
+b (5,5,dead) a (4,4,dead)
+b (7,dead,dead) a (6,6,dead)
+a (7,dead,dead)
+
+REQ_FSM: 
+2 2
+
+(1,1,1) m
+(2,2,2) m
+
+a u o
+b u o
+
+a (1,1,1) b (2,2,2)
+a (2,2,2)
+No maximally permissive supervisor exists for this FSM
+No Solution, no AIC!
+Press any key to continue...

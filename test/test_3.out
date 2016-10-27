@@ -1,0 +1,131 @@
+FSM: 
+6 3
+
+(0,0,0) m
+(1,1,1) m
+(2,2,2) m
+(3,3,dead) m
+(4,4,dead) m
+(5,dead,dead) m
+
+0 c u
+1 c o
+2 c o
+
+2 (1,1,1)
+1 (3,3,dead) 0 (2,2,2)
+2 (4,4,dead) 1 (0,0,0) 0 (0,0,0)
+2 (3,3,dead) 0 (5,dead,dead)
+
+1 (5,dead,dead)
+REQ_FSM: 
+3 3
+
+(0,0,0) m
+(1,1,1) m
+(2,2,2) m
+
+0 c u
+1 c o
+2 c o
+
+2 (1,1,1)
+0 (2,2,2)
+0 (0,0,0) 1 (0,0,0)
+*******************************************************************
+*********************All Inclusive Controller**********************
+*******************************************************************
+Y-States:
+	Information State: {(0,0,0)}
+	Transitions to:
+		Z-State with Information State {{(0,0,0)},{2}} via Control Decision {2}
+		Z-State with Information State {{(0,0,0)},{}} via Control Decision {}
+	Information State: {(1,1,1)}
+	Transitions to:
+		Z-State with Information State {{(0,0,0),(1,1,1),(2,2,2)},{0,2}} via Control Decision {0,2}
+		Z-State with Information State {{(0,0,0),(1,1,1),(2,2,2)},{0,1,2}} via Control Decision {0,1,2}
+		Z-State with Information State {{(0,0,0),(1,1,1),(2,2,2)},{0,1}} via Control Decision {0,1}
+		Z-State with Information State {{(1,1,1)},{1}} via Control Decision {1}
+		Z-State with Information State {{(0,0,0),(1,1,1),(2,2,2)},{0}} via Control Decision {0}
+		Z-State with Information State {{(1,1,1)},{}} via Control Decision {}
+	Information State: {(3,3,dead)}
+	Transitions to:
+		Z-State with Information State {{(3,3,dead)},{2}} via Control Decision {2}
+		Z-State with Information State {{(3,3,dead)},{}} via Control Decision {}
+	Information State: {(0,0,0),(3,3,dead)}
+	Transitions to:
+		Z-State with Information State {{(0,0,0),(3,3,dead)},{2}} via Control Decision {2}
+		Z-State with Information State {{(0,0,0),(3,3,dead)},{}} via Control Decision {}
+	Information State: {(1,1,1),(3,3,dead)}
+	Transitions to:
+		Z-State with Information State {{(1,1,1),(3,3,dead)},{2}} via Control Decision {2}
+		Z-State with Information State {{(1,1,1),(3,3,dead)},{1}} via Control Decision {1}
+		Z-State with Information State {{(1,1,1),(3,3,dead)},{1,2}} via Control Decision {1,2}
+		Z-State with Information State {{(1,1,1),(3,3,dead)},{}} via Control Decision {}
+	Information State: {(1,1,1),(4,4,dead)}
+	Transitions to:
+		Z-State with Information State {{(0,0,0),(1,1,1),(2,2,2),(4,4,dead)},{0,2}} via Control Decision {0,2}
+		Z-State with Information State {{(0,0,0),(1,1,1),(2,2,2),(4,4,dead)},{0,1,2}} via Control Decision {0,1,2}
+		Z-State with Information State {{(0,0,0),(1,1,1),(2,2,2),(4,4,dead)},{0,1}} via Control Decision {0,1}
+		Z-State with Information State {{(1,1,1),(4,4,dead)},{1}} via Control Decision {1}
+		Z-State with Information State {{(0,0,0),(1,1,1),(2,2,2),(4,4,dead)},{0}} via Control Decision {0}
+		Z-State with Information State {{(1,1,1),(4,4,dead)},{}} via Control Decision {}
+Z-States:
+	Information State: {{(0,0,0)},{}}
+	Information State: {{(0,0,0)},{2}}
+	Transitions to:
+		Y-State with Information State {(1,1,1)} via Event 2
+	Information State: {{(1,1,1)},{}}
+	Information State: {{(0,0,0),(1,1,1),(2,2,2)},{0}}
+	Information State: {{(1,1,1)},{1}}
+	Transitions to:
+		Y-State with Information State {(3,3,dead)} via Event 1
+	Information State: {{(3,3,dead)},{}}
+	Information State: {{(3,3,dead)},{2}}
+	Transitions to:
+		Y-State with Information State {(3,3,dead)} via Event 2
+	Information State: {{(0,0,0),(1,1,1),(2,2,2)},{0,1}}
+	Transitions to:
+		Y-State with Information State {(0,0,0),(3,3,dead)} via Event 1
+	Information State: {{(0,0,0),(3,3,dead)},{}}
+	Information State: {{(0,0,0),(3,3,dead)},{2}}
+	Transitions to:
+		Y-State with Information State {(1,1,1),(3,3,dead)} via Event 2
+	Information State: {{(1,1,1),(3,3,dead)},{}}
+	Information State: {{(1,1,1),(3,3,dead)},{1}}
+	Transitions to:
+		Y-State with Information State {(3,3,dead)} via Event 1
+	Information State: {{(1,1,1),(3,3,dead)},{2}}
+	Transitions to:
+		Y-State with Information State {(3,3,dead)} via Event 2
+	Information State: {{(1,1,1),(3,3,dead)},{1,2}}
+	Transitions to:
+		Y-State with Information State {(3,3,dead)} via Event 2
+		Y-State with Information State {(3,3,dead)} via Event 1
+	Information State: {{(0,0,0),(1,1,1),(2,2,2)},{0,2}}
+	Transitions to:
+		Y-State with Information State {(1,1,1),(4,4,dead)} via Event 2
+	Information State: {{(1,1,1),(4,4,dead)},{}}
+	Information State: {{(0,0,0),(1,1,1),(2,2,2),(4,4,dead)},{0}}
+	Information State: {{(1,1,1),(4,4,dead)},{1}}
+	Transitions to:
+		Y-State with Information State {(3,3,dead)} via Event 1
+	Information State: {{(0,0,0),(1,1,1),(2,2,2),(4,4,dead)},{0,1}}
+	Transitions to:
+		Y-State with Information State {(0,0,0),(3,3,dead)} via Event 1
+	Information State: {{(0,0,0),(1,1,1),(2,2,2),(4,4,dead)},{0,2}}
+	Transitions to:
+		Y-State with Information State {(1,1,1),(4,4,dead)} via Event 2
+	Information State: {{(0,0,0),(1,1,1),(2,2,2),(4,4,dead)},{0,1,2}}
+	Transitions to:
+		Y-State with Information State {(1,1,1),(4,4,dead)} via Event 2
+		Y-State with Information State {(0,0,0),(3,3,dead)} via Event 1
+	Information State: {{(0,0,0),(1,1,1),(2,2,2)},{0,1,2}}
+	Transitions to:
+		Y-State with Information State {(1,1,1),(4,4,dead)} via Event 2
+		Y-State with Information State {(0,0,0),(3,3,dead)} via Event 1
+*******************************************************************
+*********************End All Inclusive Controller******************
+*******************************************************************
+No Solution
+Press any key to continue...

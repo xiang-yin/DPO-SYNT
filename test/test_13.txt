@@ -1,0 +1,38 @@
+15 4
+
+0 m
+1 m
+2 m
+3 m
+4 m
+5 m
+6 m
+7 m
+8 m
+9 m
+10 m
+11 m
+12 m
+13 m
+14 m
+
+a c o
+b c o
+c u o
+d c u
+
+a 0 b 4 c 8 d 12
+a 1 b 3 c 5
+b 2 c 10 d 11
+
+d 3 b 9
+a 7 b 13 c 14
+a 10 b 6
+a 1 b 2 c 3 d 4
+b 4 d 5
+
+a 10 b 11 c 12 d 13
+a 9 c 3 d 4
+
+a 8 b 9
+d 10 b 8

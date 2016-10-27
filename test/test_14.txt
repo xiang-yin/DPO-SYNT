@@ -1,0 +1,19 @@
+7 2
+
+1 m
+2 m
+3 m
+4 m
+5 m
+6 m
+7 m
+
+a u o
+b u o
+
+a 1 b 2
+a 2 b 3
+a 3 b 4
+a 4 b 5
+a 6 b 7
+a 7

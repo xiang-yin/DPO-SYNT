@@ -1,0 +1,17 @@
+5 3
+
+0 m
+1 m
+2 m
+3 m
+4 m
+
+a c u
+b c o
+c u u
+
+a 1
+b 3 c 2
+a 0 b 4
+c 0 b 4
+c 2

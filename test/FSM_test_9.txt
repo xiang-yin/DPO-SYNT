@@ -1,0 +1,25 @@
+9 3
+
+0 u
+1 u
+2 u
+3 u
+4 u
+5 m
+6 m
+7 u
+8 u
+
+a c u
+b c u
+o u o
+
+a 1 b 2
+o 3
+o 4
+a 5 b 7 o 2
+a 8 b 6 o 1
+
+
+
+
