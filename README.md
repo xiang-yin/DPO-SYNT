@@ -155,4 +155,4 @@ The events in the Required behavior file have to be the same as the events of th
 [3] Yin, X. and Lafortune, S. (2015). A general approach for solving dynamic sensor activation problems for a class of properties. 
     In Proceedings of the 54th IEEE Conference on Decision and Control, 3610-3615.
     
-[4] Yin, X. and Lafortune, S. (2016). Synthesis of maximally-permissive supervisors for the range control problem.  IEEE Transactions on Automatic Control. Under review.
+[4] Yin, X. and Lafortune, S. (2016). Synthesis of maximally-permissive supervisors for the range control problem.  IEEE Transactions on Automatic Control. DOI: 10.1109/TAC.2016.2644867
