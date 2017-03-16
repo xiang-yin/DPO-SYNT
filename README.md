@@ -1,4 +1,6 @@
 # DPO-SYNT: Discrete Control Synthesis for Partially-Observed Systems
+## News
+MPO is available
 
 ## GENERAL USAGE NOTES
 
