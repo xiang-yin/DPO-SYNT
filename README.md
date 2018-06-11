@@ -1,6 +1,6 @@
 # DPO-SYNT: Discrete Control Synthesis for Partially-Observed Systems
 ## News
-New model MPO is available to support the synthesis of centralized sensor activatio policy
+New model MPO is available to support the synthesis of centralized sensor activatio policy.
 
 ## GENERAL USAGE NOTES
 
