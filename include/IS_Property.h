@@ -37,7 +37,7 @@ public:
 };
 
 /* Disambiguation--true if IS does not contain
-states in both A_states & B_states */
+states in both A_states & B_states aa*/
 class Disambiguation : public IS_Property {
 public:
 	Disambiguation(const std::vector<bool>& A_states_,
